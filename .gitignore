@@ -1,0 +1,22 @@
+# Python temporary files and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+.env
+.pytest_cache/
+
+# Node dependencies and build files
+node_modules/
+dist/
+.eslintcache
+.vite/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.log
