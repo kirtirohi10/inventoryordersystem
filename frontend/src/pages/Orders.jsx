@@ -346,8 +346,8 @@ const Orders = () => {
               Add Products
             </h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr auto', gap: '1rem', alignItems: 'flex-end' }}>
-              <div className="form-group" style={{ marginBottom: 0 }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-end' }}>
+              <div className="form-group" style={{ marginBottom: 0, flex: '2 1 200px' }}>
                 <label>Select Product</label>
                 <select 
                   className="form-control"
@@ -366,7 +366,7 @@ const Orders = () => {
                 </select>
               </div>
 
-              <div className="form-group" style={{ marginBottom: 0 }}>
+              <div className="form-group" style={{ marginBottom: 0, flex: '1 1 80px' }}>
                 <label>
                   Quantity {currentProductId && (
                     <span className="badge badge-warning" style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem', marginLeft: '0.25rem' }}>
@@ -388,7 +388,7 @@ const Orders = () => {
               <button 
                 type="button" 
                 className="btn btn-secondary" 
-                style={{ height: '43px', display: 'flex', alignItems: 'center' }}
+                style={{ height: '43px', display: 'flex', alignItems: 'center', flex: '0 0 auto' }}
                 onClick={handleAddItem}
                 disabled={!currentProductId}
               >
