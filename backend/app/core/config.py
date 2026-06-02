@@ -15,7 +15,13 @@ class Settings:
     
     @property
     def DATABASE_URL(self) -> str:
-        # Generate PostgreSQL Connection URL
+        # Check if database URL is explicitly defined in environment (e.g. on Render)
+        env_url = os.getenv("DATABASE_URL")
+        if env_url:
+            if env_url.startswith("postgres://"):
+                env_url = env_url.replace("postgres://", "postgresql://", 1)
+            return env_url
+        # Otherwise build from separate variables
         return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
 settings = Settings()
