@@ -37,6 +37,15 @@ def global_exception_handler(request: Request, exc: Exception):
         }
     )
 
+# Welcome endpoint
+@app.get("/", tags=["Root"])
+def root_index():
+    return {
+        "message": "Welcome to the Inventory & Order Management System API!",
+        "documentation": "/docs",
+        "health": "/health"
+    }
+
 # Health Check endpoint
 @app.get("/health", tags=["Health"])
 def health_check():
