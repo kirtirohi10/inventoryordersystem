@@ -1,4 +1,8 @@
 /* Core Design System & Global Styles */
+html {
+  scrollbar-gutter: stable;
+}
+
 :root {
   --bg-main: #090a0f;
   --bg-card: rgba(22, 25, 43, 0.65);
