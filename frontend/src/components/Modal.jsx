@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 const Modal = ({ isOpen, onClose, title, children }) => {
@@ -20,7 +21,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div 
       className="modal-overlay"
       style={{
@@ -31,8 +32,9 @@ const Modal = ({ isOpen, onClose, title, children }) => {
         bottom: 0,
         backgroundColor: 'rgba(5, 5, 8, 0.75)',
         backdropFilter: 'blur(8px)',
-        zIndex: 100,
+        zIndex: 9999,
         display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
         overflowY: 'auto',
         padding: '1.5rem',
@@ -94,7 +96,8 @@ const Modal = ({ isOpen, onClose, title, children }) => {
           {children}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
