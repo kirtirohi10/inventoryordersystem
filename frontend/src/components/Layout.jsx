@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Package, Users, ShoppingBag, Github, Globe, Server, Layers } from 'lucide-react';
+import { LightRays } from './LightRays';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -13,9 +14,19 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <div className="app-container">
-      {/* Background gradients */}
-      <div className="gradient-bg"></div>
+    <div className="app-container" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* WebGL Light rays atmospheric background */}
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#8b5cf6"
+        raysSpeed={0.8}
+        lightSpread={1.2}
+        rayLength={1.8}
+        followMouse={true}
+        mouseInfluence={0.2}
+        noiseAmount={0.015}
+        distortion={0.05}
+      />
 
       {/* Sidebar navigation */}
       <aside className="sidebar">
