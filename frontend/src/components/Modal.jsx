@@ -33,8 +33,8 @@ const Modal = ({ isOpen, onClose, title, children }) => {
         backdropFilter: 'blur(8px)',
         zIndex: 100,
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
+        overflowY: 'auto',
         padding: '1.5rem',
         animation: 'fadeIn 0.25s ease-out forwards'
       }}
@@ -52,6 +52,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
           borderRadius: '16px',
           boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
           overflow: 'hidden',
+          margin: 'auto'
         }}
       >
         {/* Header */}
